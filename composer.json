@@ -1,0 +1,28 @@
+{
+    "name": "alextigaer/team-auth",
+    "description": "A simple multi-auth package for laravel 5.*",
+    "authors": [
+        {
+            "name": "Alessio Vietri",
+            "email": "alvietri@gmail.com"
+        }
+    ],
+    "keywords": ["laravel","team-auth","multiauth","multi-auth"],
+    "homepage": "https://github.com/alextigaer/team-auth",
+    "license": "MIT",
+    "require": {
+        "laravel/framework": "5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "AlexTigaer\\TeamAuth\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AlexTigaer\\TeamAuth\\Providers\\TeamAuthServiceProvider"
+            ]
+        }
+    }
+}
