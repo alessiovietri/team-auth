@@ -2,7 +2,7 @@
 
 ---
 
-DESCRIPTION
+A simple multi-auth package for Laravel 5.*
 
 # **Table of Contents**
 
