@@ -1,7 +1,5 @@
 # **TeamAuth**
 
----
-
 A simple multi-auth package for Laravel 5.*
 
 # **Table of Contents**
@@ -19,6 +17,7 @@ A simple multi-auth package for Laravel 5.*
 	- [--seeder](#seeder)
 	- [--s](#db-seed)
 	- [--routes-web](#routes-web)
+- [Config](#config)
 - [Usage examples](#usage-examples)
 - [Contributing](#contributing)
 - [License](#license)
@@ -234,6 +233,12 @@ Usage:
 // Create the role without editing the routes\web file
 php artisan team-auth:create RoleName --routes-web=n
 ```
+
+## **Config**
+
+This package has its own configuration file. Inside that file, you'll find:
+- An entry to specify where your models are
+- The default values for the options. These values will be overwritten if you use the options by command line
 
 ## **Usage examples**
 
