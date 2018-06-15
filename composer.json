@@ -7,7 +7,7 @@
             "email": "alvietri@gmail.com"
         }
     ],
-    "keywords": ["laravel","team-auth","multiauth","multi-auth"],
+    "keywords": ["laravel","team-auth","teamauth","multi-auth","multiauth"],
     "homepage": "https://github.com/alextigaer/team-auth",
     "license": "MIT",
     "require": {
