@@ -55,7 +55,7 @@ This command will:
 - Create 2 migrations:
     - create_role_names_table
     - create_role_names_password_resets_table
-- Create RoleNameSeeder
+- Create RoleNameSeeder and update DatabaseSeeder to call the generated seeder
 - Edit routes\web.php file to add the routes for the role
 
 ## **Options**
