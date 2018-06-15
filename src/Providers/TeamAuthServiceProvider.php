@@ -13,6 +13,12 @@ class TeamAuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // Publish config file
+        $this->publishes([
+            __DIR__.'/team-auth.php' => config_path('courier.php'),
+        ]);
+
+        // Check if the command is called from the console
         if($this->app->runningInConsole()){
             $this->commands([
                 'AlexTigaer\TeamAuth\Commands\CreateAuth',
