@@ -13,7 +13,7 @@ class CreateAuth extends Command
      */
     protected $signature = 'team-auth:create
         {name               :   The name of the role to create}
-        {--r=y              :   Choose if users can register to this role, or not [y/n]}
+        {--r=y              :   Choose if users can register with this role, or not [y/n]}
         {--controllers=y    :   Choose whether to create controllers, or not [y/n]}
         {--views=y          :   Choose whether to create views, or not [y/n]}
         {--model=y          :   Choose whether to create the model, or not [y/n]}
@@ -74,7 +74,7 @@ class CreateAuth extends Command
     protected $pluralSlug;
 
     /**
-     * Set if users can register to this role.
+     * Set if users can register with this role.
      *
      * @var string
      */
@@ -441,6 +441,12 @@ class CreateAuth extends Command
         $roleSeederFile = database_path('seeds\\'.str_replace($this->word, $this->name, $packageRoleSeederFileName));
         $this->copy_file($packageRoleSeederFile, $roleSeederFile, $this->word, $this->name);
         $this->copy_file($roleSeederFile, $roleSeederFile, 'MODELSDIR', $modelsDir);
+
+        // Edit database seeder to call generated seeder
+        $dbSeederFile = database_path('seeds\\DatabaseSeeder.php');
+        $needle = "\t{";
+        $string = "\n\t\t".'$this->call('.$this->name.'Seeder::class);';
+        $this->add_string($dbSeederFile, $needle, $string);
 
         // Run the command db:seed if the option is set
         if($this->option('s') == 'y'){
