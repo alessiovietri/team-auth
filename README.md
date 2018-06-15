@@ -1,6 +1,6 @@
 # **TeamAuth**
 
-A simple multi-auth package for Laravel 5.*
+A simple multi-auth package for Laravel 5.5/6
 
 # **Table of Contents**
 
